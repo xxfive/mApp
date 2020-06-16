@@ -1,27 +1,25 @@
-package day01;
-import java.util.Scanner;
+package day02;
 
 public class Exam07 {
-	public static void main(String[] args) {
-		/*점수를 입력하고
-		 *커트라인을 입력하여
-		 *합격인지 불합격인지 알아보자
-		 */
-		Scanner s=new Scanner(System.in);
-		System.out.println("점수를 입력하세요>>");
-		int score=s.nextInt();
-		System.out.println("커트라인을 입력하세요>>");
-		int cut=s.nextInt();
-		if(score>=cut) {
-			System.out.println("합격");
-		}else { 
-			System.out.println("불합격");
+	public static void main(String[]args) {
+		//1부터 5까지 출력
+		for(int i=1; i<6; i++) {
+			System.out.print(i+"\t");
 		}
-		//점수가 3의 배수인지 아닌지
-		if(score%3==0) {
-			System.out.println(score+":3의 배수");
-		}else {
-			System.out.println(score+":3의 배수x");
+		System.out.println();
+		System.out.println("----");
+		//1부터 5까지 출력 while (while은 조건문만 씀)
+		int n=1;
+		while(n<6) { //while은 조건이 안맞으면 실행x
+			System.out.print(n+"\t");
+			n++;
 		}
+		System.out.println("\n----");
+		//1부터 5까지 출력 do~while
+		int m=1;
+		do { //do~while은 조건이 안맞아도 무조건 한번은 실행
+			System.out.print(m+"\t");
+			m++;
+		}while(m<6);
 	}
 }

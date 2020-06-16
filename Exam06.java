@@ -1,25 +1,46 @@
-package day01;
+package day02;
 import java.util.Scanner;
 
 public class Exam06 {
-	public static void main(String[] args) {
-		System.out.println("수를 입력하세요 >>");
+	public static void main(String[]args) {
+		/*1부터 10까지의 합 55
+		 *11부터 20까지의 합 ?
+		 *....
+		 *91부터 100까지의 합? 총 10개만 나오게
+		 */
+		int hap=0;
+		for(int i=1; i<=100; i++) {
+			hap=hap+i;
+			if(i%10==0) {
+			System.out.println((i-9)+"부터 "+i+"까지의 합:"+hap);
+			hap=0;
+			}
+		}
+		//학생수와 한줄에 앉을 학생 수를 입력받아 출력
 		Scanner sc=new Scanner(System.in);
-		int su=sc.nextInt();
-		System.out.println(su);
-		if(su%2==0) {
-			System.out.println("짝수");
-		}else if(su%2==1) {
-			System.out.println("홀수");
+		System.out.println("학생수>>");
+		int stuCnt=sc.nextInt();
+		System.out.println("한줄 인원>>");
+		int lineCnt=sc.nextInt();
+		for(int i=1; i<=stuCnt; i++) {
+			System.out.print(i+"\t"); // \t:탭만큼 띄우기
+			if(i%lineCnt==0) {
+				System.out.println();
 		}
-		System.out.println("나이를 입력하세요>>");
-		int age=sc.nextInt();
-		if(age>=20) {
-			System.out.println("입장가능");
-		}else if(age>=15) { //age>=15 && age<20 으로 할 필요가 없다
-			System.out.println("부모님과 동반입장");
-		}else if(age<15) {
-			System.out.println("입장 불가능");
+			
 		}
+		//총 몇줄인지 출력
+		int row=0;
+		if(stuCnt%lineCnt==0) { //적용되는 문단이 하나면 {} 안넣어도 실행됨
+			row=stuCnt/lineCnt;
+		}else {
+			row=(stuCnt/lineCnt)+1;
+		}System.out.print("총 라인 수:"+row);
+		
+		//삼항연산자(조건연산자)
+		int r=(stuCnt%lineCnt==0)? stuCnt/lineCnt:(stuCnt/lineCnt)+1;
+		System.out.print("총 라인 수:"+r);
+	}	
 	}
-}
+
+

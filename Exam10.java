@@ -1,31 +1,56 @@
-package day01;
-import java.util.Scanner;
+package day02;
 
 public class Exam10 {
+//가로배치
 	public static void main(String[] args) {
-		/*1~99 사이 정수 하나를 입력
-		 * 십단위 3,6,9 검사
-		 * 일단위 3,6,9 검사
-		 * 3,6,9가 2개면 박수짝짝
-		 * 3,6,9가 1개면 박수짝
-		 * 없으면 박수없음 출력
-		 */
-		Scanner sc=new Scanner(System.in);
-		System.out.println("1~99사이 정수를 입력하세요");
-		int num=sc.nextInt();
-		int a=num/10; //십단위
-		int b=num%10; //일단위
-		int cnt=0;
-		if(a!=0 && a%3==0) {
-			cnt=cnt+1; // cnt+=1; //cnt++ 셋다 같은 표현
-		}if(b!=0 && b%3==0) {
-			cnt=cnt+1; // cnt+=1; //cnt++
-		}if(cnt==2) {
-			System.out.println("박수짝짝");
-		}else if(cnt==1) {
-			System.out.println("박수짝");
-		}else {
-			System.out.println("박수없음");
+		for(int k=2; k<=4; k++) { //이중 for문
+			for(int i=1; i<=3; i++) {
+				System.out.println(k+"*"+i+"="+k*i);
+				}
+			System.out.println();
 		}
+		System.out.println("========");
+		//세로배치
+		for(int b=1; b<=9; b++) {
+			for(int a=4; a<=6; a++)
+				System.out.print(a+"*"+b+"="+a*b+"\t");
+				System.out.println();
+			}
+		/*123456789
+		 * 1234567
+		 * 12345
+		 * 123
+		 * 1
+		 */
+		System.out.println("========");
+		for(int i=9; i>0; i-=2) {
+			for(int j=1; j<=i; j++) { 
+			System.out.print(j);
+			}
+			System.out.println();
+}  
+			/*1
+			123
+			12345
+			1234567
+			123456789*/
+		System.out.println("=====");
+		for(int i=1; i<10; i+=2) {
+			for(int j=1; j<=i; j++) { 
+			System.out.print(j);
+			}
+			System.out.println();
+	}
+		//3,5,7단을 구하고 각각 단 앞에 몇단인지 써라
+		for(int a=3; a<=7; a+=2){
+			System.out.println("["+a+"단]");
+			for(int b=1; b<=9; b++)
+			System.out.println(a+"*"+b+"="+(a*b)+"\t");
+			System.out.println();
+		}
+	}
 }
-}
+
+
+  
+

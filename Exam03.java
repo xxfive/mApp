@@ -1,31 +1,38 @@
-package day01;
+package day02;
+import java.util.Scanner;
 
 public class Exam03 {
-	public static void main(String[] args) {
-		int a = 135;
-		int b = 20;
-		System.out.println("a+b="+(a+b));
-		System.out.println("a-b="+(a-b));
-		System.out.println("a*b="+(a*b));
-		System.out.println("a/b="+(a/b));
-		System.out.println("a%b="+(a%b));
-		System.out.println(a+"+"+b+"="+(a+b));
-		System.out.println(a+"%"+b+"="+(a%b));
+	public static void main(String[]args) {
+		for(int i=1; i<6; i++) {
+			System.out.println(i+":안녕하세요");
+		}
+		System.out.println("=========");
+		for(int i=5; i>0; i--) {
+			System.out.println(i+":안녕하세요");
+		}
+		//2단 출력
+		for(int i=1; i<10; i++) {
+			System.out.println("2*"+i+"="+2*i);
+		}
+		//1부터 10까지 수 중에서 짝수만 출력
+		for(int i=1; i<=10; i++) {
+			if(i%2==0) {
+			System.out.println(i);
 	}
-
-//정수형
-//int-4바이트(32비트)
-//long-8바이트(64비트)
- long c=100000000000L;
- 
- //실수형
- float f=3.25f; //4바이트
- double d=3.25;	//8바이트 
- 
- //문자하나 
- char ch='A';
- //char ch1="B"; 오류발생
- 
- //문자열
- String a="a";
+		}
+		System.out.println("====");
+		for(int i=2; i<=10; i+=2) {
+			System.out.println(i);
+		}
+		for(int i=1; i<=10; i++) {
+			System.out.println(++i);
+		}
+		//단을 입력받아 해당되는 단의 구구단 출력
+		Scanner sc=new Scanner(System.in);
+		System.out.println("단을 입력하세요>>");
+		int a=sc.nextInt();
+		for(int i=1; i<10; i++) {
+			System.out.println(a+"*"+i+"="+a*i);
+		}
+}
 }
